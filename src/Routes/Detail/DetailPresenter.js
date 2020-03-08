@@ -54,6 +54,7 @@ const Title = styled.h3`
 `;
 
 const ItemContainer = styled.div`
+  position: relative;
   margin: 20px 0;
 `;
 
@@ -61,6 +62,10 @@ const Item = styled.span``;
 
 const Divider = styled.span`
   margin: 0 10px;
+
+  :after {
+    content: '•';
+  }
 `;
 
 const Overview = styled.p`
@@ -68,6 +73,18 @@ const Overview = styled.p`
   opacity: 0.7;
   line-height: 1.5;
   width: 50%;
+`;
+
+const Imdb = styled.a`
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background-image: url(${props => props.src});
+  background-position: center center;
+  background-size: cover;
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
@@ -111,11 +128,11 @@ const DetailPresenter = ({ result, loading, error }) =>
                 ? result.release_date.substring(0, 4)
                 : result.first_air_date.substring(0, 4)}
             </Item>
-            <Divider>•</Divider>
+            <Divider />
             <Item>
               {result.runtime ? result.runtime : result.episode_run_time[0]} min
             </Item>
-            <Divider>•</Divider>
+            <Divider />
             <Item>
               {result.genres &&
                 result.genres.map((genre, index) =>
@@ -124,6 +141,18 @@ const DetailPresenter = ({ result, loading, error }) =>
                     : `${genre.name} / `,
                 )}
             </Item>
+            {result.imdb_id && (
+              <>
+                <Divider />
+                <Item>
+                  <Imdb
+                    href={`https://www.imdb.com/title/${result.imdb_id}`}
+                    target={'_blank'}
+                    src={require('../../assets/logoImdb.png')}
+                  />
+                </Item>
+              </>
+            )}
           </ItemContainer>
           <Overview>{result.overview}</Overview>
         </Data>
