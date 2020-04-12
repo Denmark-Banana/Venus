@@ -6,11 +6,10 @@ import {
   Switch
 } from "react-router-dom";
 import Home from "Routes/Home";
-import Tv from "Routes/TV/TVContainer";
+import Tv from "Routes/TV";
 import Header from "Components/Header";
 import Search from "Routes/Search";
 import Detail from "Routes/Detail";
-import Video from "Routes/Video";
 
 export default () => (
   <Router>
@@ -20,11 +19,7 @@ export default () => (
         <Route path="/" exact component={Home} />
         <Route path="/tv" component={Tv} />
         <Route path="/search" component={Search} />
-        <Route path="/movie/:id/video/:videoId" component={Video} />
-        <Route path="/movie/:id/video" component={Video} />
         <Route path="/movie/:id" component={Detail} />
-        <Route path="/show/:id/video/:videoId" component={Video} />
-        <Route path="/show/:id/video" component={Video} />
         <Route path="/show/:id" component={Detail} />
         <Redirect from="*" to="/" />
       </Switch>

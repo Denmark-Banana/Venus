@@ -54,7 +54,6 @@ const Title = styled.h3`
 `;
 
 const ItemContainer = styled.div`
-  position: relative;
   margin: 20px 0;
 `;
 

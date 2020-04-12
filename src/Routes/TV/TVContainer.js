@@ -3,6 +3,13 @@ import TVPresenter from './TVPresenter';
 import { tvApi } from 'api';
 
 export default class extends React.Component {
+  /**
+   * @property {array} state.topRated - Top rated tvshow  
+   * @property {array} state.popular - Polular tvshow
+   * @property {array} state.popular - Aired today tvshow
+   * @property {boolean} state.loading - Whether it is loaded 
+   * @property {string} state.error - The error message
+   */
   state = {
     topRated: null,
     popular: null,

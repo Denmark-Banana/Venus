@@ -3,6 +3,13 @@ import HomePresenter from './HomePresenter';
 import { moviesApi } from 'api';
 
 export default class extends React.Component {
+  /**
+   * @property {array} state.nowPlaying - The movies currently playing 
+   * @property {array} state.upcoming - The movies to be upcoming
+   * @property {array} state.popular - The popluar movies
+   * @property {string} state.error - The error message
+   * @property {boolean} state.loading - Whether it is loaded 
+   */
   state = {
     nowPlaying: null,
     upcoming: null,

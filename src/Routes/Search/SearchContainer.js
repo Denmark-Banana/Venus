@@ -3,6 +3,13 @@ import SearchPresenter from './SearchPresenter';
 import { tvApi, moviesApi } from 'api';
 
 export default class extends React.Component {
+    /**
+   * @property {array} state.movieResults - Results for movie search
+   * @property {array} state.tvResults - Results for tv search
+   * @property {string} state.searchTerm - Search term for movie search
+   * @property {string} state.error - The error message
+   * @property {boolean} state.loading - Whether it is loaded 
+   */
   state = {
     movieResults: null,
     tvResults: null,
@@ -11,6 +18,10 @@ export default class extends React.Component {
     error: null,
   };
 
+  /**
+   * Handles form submission
+   * @param event - The from event
+   */
   handleSubmit = event => {
     event.preventDefault();
     const { searchTerm } = this.state;
@@ -19,6 +30,10 @@ export default class extends React.Component {
     }
   };
 
+  /**
+   * Updates input Term
+   * @param event - The from event
+   */
   updateTerm = event => {
     const {
       target: { value: searchTerm },
@@ -28,6 +43,9 @@ export default class extends React.Component {
     })
   };
 
+  /**
+   * search by Term
+   */
   searchByTerm = async () => {
     const { searchTerm } = this.state;
     this.setState({ loading: true });

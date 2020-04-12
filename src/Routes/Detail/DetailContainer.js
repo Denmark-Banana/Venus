@@ -3,6 +3,12 @@ import DetailPresenter from './DetailPresenter';
 import { moviesApi, tvApi } from '../../api';
 
 export default class extends React.Component {
+  /**
+   * @property {array} state.result - The movies detail information 
+   * @property {string} state.error - The error message
+   * @property {boolean} state.loading - Whether it is loaded 
+   * @property {boolean} state.isMovie - Whether router pathname is movie
+   */
   constructor(props) {
     super(props);
     const {
@@ -32,14 +38,8 @@ export default class extends React.Component {
     try {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parsedId));
-        if (result.runtime === null || result.runtime === undefined) {
-          result.runtime = "unknown";
-        }
       } else {
         ({ data: result } = await tvApi.showDetail(parsedId));
-        if (result.episode_run_time === null || result.episode_run_time[0] === undefined) {
-          result.episode_run_time = ["unknown"];
-        }
       }
     } catch {
       this.setState({ error: "Can't find anything." });
