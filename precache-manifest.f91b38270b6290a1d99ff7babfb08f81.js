@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2f70f2f71d7534642b72047357b8e77",
+    "revision": "ca7af63ef2b4d268341ee3ef7e972eb6",
     "url": "/Venus/index.html"
   },
   {
-    "revision": "d2145399d303d67ce397",
-    "url": "/Venus/static/js/2.15486fa7.chunk.js"
+    "revision": "9baeea57bbfd27c0ede5",
+    "url": "/Venus/static/js/2.8b825e3e.chunk.js"
   },
   {
     "revision": "ff2a223b51b86718de583271daa0b126",
-    "url": "/Venus/static/js/2.15486fa7.chunk.js.LICENSE.txt"
+    "url": "/Venus/static/js/2.8b825e3e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "46194e84022a32353aa1",
-    "url": "/Venus/static/js/main.3efbc246.chunk.js"
+    "revision": "25673f12e4740c2c46f8",
+    "url": "/Venus/static/js/main.8e8518f3.chunk.js"
   },
   {
     "revision": "d534b19f491a0e2989b4",
